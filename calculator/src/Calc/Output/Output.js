@@ -7,8 +7,12 @@ class Output extends React.Component {
         this.state = '';
     }
 
+    handleScreenChange() {
+        
+    }
+
     render() {
-        return <input id="output" value={this.state} onChange={this.handleChange} />;
+        return <input id="output" value={this.state} onChange={this.handleScreenChange} />;
     }
 
 }
