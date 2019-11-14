@@ -1,18 +1,25 @@
 import React from 'react';
+import Numbers from '../Buttons/Numbers/Numbers';
 import './Output.scss';
 
 class Output extends React.Component {
     constructor(props) {
         super(props);
-        this.state = '';
+        this.state = {screen: ''};
     }
 
-    handleScreenChange() {
-        
+    handleScreenChange(char) {
+        console.log(char);
+        console.log(this.state.screen);
+        // this.setState(state => ({
+        //     screen: state.screen + char
+        // }));
     }
 
     render() {
-        return <input id="output" value={this.state} onChange={this.handleScreenChange} />;
+        console.log(this.state.screen);
+
+        return <input id="output" value={this.state.screen} onChange={this.handleScreenChange} />;
     }
 
 }
