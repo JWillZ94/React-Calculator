@@ -10,14 +10,11 @@ class Numbers extends React.Component {
 
     handleNumberPress(e) {
         let num = e.target.value;
-
-        console.log(num);
-        Output.prototype.handleScreenChange(num);
     }
 
     render() {
         const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-            .map(num => <button onClick={this.handleNumberPress} value={num}>{num}</button>);
+            .map(num => <button onClick={e => this.props.handleNumberPress(e.target.value)} value={num}>{num}</button>);
 
         return <ul>{numbers}</ul>;
     }
