@@ -1,6 +1,6 @@
 import React from 'react';
 import Output from '../../Output/Output';
-
+import './Numbers.scss'
 
 class Numbers extends React.Component {
     constructor(props) {
