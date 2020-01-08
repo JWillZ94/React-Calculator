@@ -33,7 +33,6 @@ class Calc extends React.Component {
             case ')':
                 let leftCount = 0;
                 let rightCount = 1;
-                console.log([...this.state.screen]);
                 [...this.state.screen].forEach(i => {
                     if (i === '(') {
                         leftCount++;
@@ -48,8 +47,6 @@ class Calc extends React.Component {
                 } else {
                     char = '';
                 }
-                console.log(leftCount);
-                console.log(rightCount);
                 break;
 
             default:
