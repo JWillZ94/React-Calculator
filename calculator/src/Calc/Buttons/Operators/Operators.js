@@ -4,9 +4,10 @@ import './Operators.scss'
 class Operators extends React.Component {
 
     render() {
-        return (
-            <div id="operators-container"></div>
-        );
+        const ops = ['+', '-', '*', '/', '=']
+            .map(op => <button value={op} key={op}>{op}</button>);
+
+        return <ul id="operators-container">{ops}</ul>;
     }
 }
 

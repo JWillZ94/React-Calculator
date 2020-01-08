@@ -9,9 +9,9 @@ class Buttons extends React.Component {
     render() {
         return (
             <div id="btns-container">
-                <Numbers handleNumberPress={this.handleScreenChange}/>
+                <Numbers handleNumberPress={this.props.handleScreenChange}/>
                 <Operators />
-                <Other />
+                <Other handleOtherPress={this.props.handleScreenChange}/>
             </div>
         );
     }

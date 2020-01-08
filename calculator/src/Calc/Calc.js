@@ -1,6 +1,6 @@
 import React from 'react';
 import Output from './Output/Output';
-import Numbers from './Buttons/Numbers/Numbers';
+import Buttons from './Buttons/Buttons';
 import './Calc.scss';
 
 class Calc extends React.Component {
@@ -15,16 +15,58 @@ class Calc extends React.Component {
     handleScreenChange(char) {
         console.log(char);
 
-        this.setState(state => ({
-            screen: state.screen += char
-        }));
+        switch(char) {
+            case '<-':
+                char = '';
+                this.setState(state => ({
+                    screen: state.screen.slice(0, -1)
+                }));
+                break;
+
+            case 'clear':
+                char = '';
+                this.setState(state => ({
+                    screen: ''
+                }));
+                break;
+
+            case ')':
+                let leftCount = 0;
+                let rightCount = 1;
+                console.log([...this.state.screen]);
+                [...this.state.screen].forEach(i => {
+                    if (i === '(') {
+                        leftCount++;
+                    } else if (i === ')') {
+                        rightCount++;
+                    }
+                })
+                if (leftCount >= rightCount) {
+                    this.setState(state => ({
+                        screen: state.screen += char
+                    }));
+                } else {
+                    char = '';
+                }
+                console.log(leftCount);
+                console.log(rightCount);
+                break;
+
+            default:
+                this.setState(state => ({
+                    screen: state.screen += char
+                }));
+                break;
+        }
+
+
     }
 
     render() {
         return (
             <div id="calc">
                 <Output screen={this.state.screen} />
-                <Numbers handleNumberPress={this.handleScreenChange}/>
+                <Buttons handleScreenChange={this.handleScreenChange} />
             </div>
         );
     }

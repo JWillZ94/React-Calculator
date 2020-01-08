@@ -4,9 +4,10 @@ import './Other.scss';
 class Other extends React.Component {
 
     render() {
-        return (
-            <div id="other-container"></div>
-        );
+        const others = ['(', ')', '<-', 'clear']
+            .map(other => <button onClick={e => this.props.handleOtherPress(e.target.value)} value={other} key={other}>{other}</button>);
+
+        return <ul id="other-container">{others}</ul>;
     }
 }
 
