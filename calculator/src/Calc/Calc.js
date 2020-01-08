@@ -49,6 +49,16 @@ class Calc extends React.Component {
                 }
                 break;
 
+            case '+':
+            case '-':
+            case '*':
+            case '/':
+                [...this.state.screen].forEach(i => {
+                    if (i === '(') {
+                        
+                    }
+                })
+
             default:
                 this.setState(state => ({
                     screen: state.screen += char

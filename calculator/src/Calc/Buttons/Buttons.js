@@ -10,7 +10,7 @@ class Buttons extends React.Component {
         return (
             <div id="btns-container">
                 <Numbers handleNumberPress={this.props.handleScreenChange}/>
-                <Operators />
+                <Operators handleOperatorPress={this.props.handleScreenChange} />
                 <Other handleOtherPress={this.props.handleScreenChange}/>
             </div>
         );
