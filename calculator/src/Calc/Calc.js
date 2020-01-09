@@ -53,11 +53,32 @@ class Calc extends React.Component {
             case '-':
             case '*':
             case '/':
-                [...this.state.screen].forEach(i => {
-                    if (i === '(') {
-                        
-                    }
-                })
+                if (!this.state.screen.length && char !== '-') {
+                    char = '';
+                } else if (
+                    (this.state.screen.slice(-1) === '*' ||
+                    this.state.screen.slice(-1) === '/' ||
+                    this.state.screen.slice(-1) === '(') &&
+                    char === '-'
+                ) {
+                    this.setState(state => ({
+                        screen: state.screen += char
+                    }));
+                } else if (
+                    this.state.screen.slice(-1) === '+' ||
+                    this.state.screen.slice(-1) === '-' ||
+                    this.state.screen.slice(-1) === '*' ||
+                    this.state.screen.slice(-1) === '/' ||
+                    this.state.screen.slice(-1) === '('
+                ) {
+
+                    char = '';
+                } else {
+                    this.setState(state => ({
+                        screen: state.screen += char
+                    }));
+                }
+                break;
 
             default:
                 this.setState(state => ({
@@ -71,7 +92,7 @@ class Calc extends React.Component {
 
     render() {
         return (
-            <div id="calc">
+            <div id="calc-container">
                 <Output screen={this.state.screen} />
                 <Buttons handleScreenChange={this.handleScreenChange} />
             </div>
