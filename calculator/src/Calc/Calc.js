@@ -13,7 +13,6 @@ class Calc extends React.Component {
     }
 
     handleScreenChange(char) {
-        console.log(char);
 
         switch(char) {
             case '<-':
@@ -78,6 +77,25 @@ class Calc extends React.Component {
                         screen: state.screen += char
                     }));
                 }
+                break;
+
+            case '=':
+                function newEval(fn) {
+                    [...fn].forEach((val, i, a) => {
+                        if (a[i + 1] && Number(a[i]) && a[i + 1] === '(') {
+                            a.splice(i + 1, 0, '*');
+                        } else if (a[i + 1] && Number(a[i + 1]) && a[i] === ')') {
+                            a.splice(i, 0, '*');
+                        }
+                    });
+                    // console.log(typeof fn);
+                    return new Function('return ' + fn)();
+                }
+
+                this.setState(state => ({
+                    screen: newEval(state.screen).toString()
+                }));
+
                 break;
 
             default:
