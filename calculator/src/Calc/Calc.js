@@ -84,11 +84,12 @@ class Calc extends React.Component {
                     [...fn].forEach((val, i, a) => {
                         if (a[i + 1] && Number(a[i]) && a[i + 1] === '(') {
                             a.splice(i + 1, 0, '*');
+                            fn = a.join('');
                         } else if (a[i + 1] && Number(a[i + 1]) && a[i] === ')') {
                             a.splice(i, 0, '*');
+                            fn = a.join('');
                         }
                     });
-                    // console.log(typeof fn);
                     return new Function('return ' + fn)();
                 }
 
@@ -104,7 +105,6 @@ class Calc extends React.Component {
                 }));
                 break;
         }
-
 
     }
 

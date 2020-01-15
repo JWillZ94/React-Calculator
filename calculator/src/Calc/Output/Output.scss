@@ -1,7 +1,36 @@
+#calc-container > div {
+    position: relative;
+}
+
+#calc-container i {
+    position: absolute;
+    width: 1px;
+    height: 80%;
+    background-color: gray;
+    left: 5px;
+    top: 10%;
+    animation-name: blinkingCursor;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+    opacity: 1;
+}
+
 #output {
-    max-width: 250px;
+    // max-width: 250px;
     width: 100%;
+
     max-height: 30px;
     height: 100%;
     border: 1px solid #333;
+
+}
+
+@keyframes blinkingCursor {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
 }
