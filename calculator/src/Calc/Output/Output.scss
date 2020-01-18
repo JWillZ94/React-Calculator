@@ -1,36 +1,37 @@
-#calc-container > div {
+#output-container {
     position: relative;
-}
 
-#calc-container i {
-    position: absolute;
-    width: 1px;
-    height: 80%;
-    background-color: gray;
-    left: 5px;
-    top: 10%;
-    animation-name: blinkingCursor;
-    animation-duration: 800ms;
-    animation-iteration-count: infinite;
-    opacity: 1;
-}
-
-#output {
-    // max-width: 250px;
-    width: 100%;
-
-    max-height: 30px;
-    height: 100%;
-    border: 1px solid #333;
-
-}
-
-@keyframes blinkingCursor {
-    from {
-        opacity: 1;
+    #output {
+        // width: 200px;
     }
 
-    to {
+    #caret {
+        position: absolute;
+        top: 4px;
+        color: #333;
+        animation-name: blink;
+        animation-duration: 0.9s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes blink {
+        from {
+            opacity: 1;
+        }
+
+        49.9% {
+          opacity: 1;
+        }
+        50% {
         opacity: 0;
+        }
+
+        99.9% {
+          opacity: 0;
+        }
+
+        to {
+        opacity: 1;
+        }
     }
 }

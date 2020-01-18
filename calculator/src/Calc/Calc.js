@@ -109,6 +109,7 @@ class Calc extends React.Component {
     }
 
     render() {
+
         return (
             <div id="calc-container">
                 <Output screen={this.state.screen} />
