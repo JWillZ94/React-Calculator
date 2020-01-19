@@ -4,9 +4,9 @@ import Calc from '../Calc/Calc';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>React Calculator</h1>
+    <div className="app">
+      <header className="app-header">
+        <h1>React.js Calculator</h1>
         <Calc />
       </header>
     </div>
