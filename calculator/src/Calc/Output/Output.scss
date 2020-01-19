@@ -1,37 +1,46 @@
-#output-container {
+#output {
+    caret-color: auto;
+    font-size: 12px;
     position: relative;
+    width: 200px;
+    height: 20px;
+    background: #fff;
+    border: 1px solid #333;
+    margin: 0 auto;
+}
 
-    #output {
-        // width: 200px;
-    }
+#output-value-space {
+    position: absolute;
+    left: 4px;
+    font-size: 12px;
+    color: #333;
 
-    #caret {
-        position: absolute;
-        top: 4px;
+    &::after {
+        content: "|";
         color: #333;
         animation-name: blink;
         animation-duration: 0.9s;
         animation-iteration-count: infinite;
     }
+}
 
-    @keyframes blink {
-        from {
-            opacity: 1;
-        }
-
-        49.9% {
-          opacity: 1;
-        }
-        50% {
-        opacity: 0;
-        }
-
-        99.9% {
-          opacity: 0;
-        }
-
-        to {
+@keyframes blink {
+    from {
         opacity: 1;
-        }
+    }
+
+    49.9% {
+      opacity: 1;
+    }
+    50% {
+    opacity: 0;
+    }
+
+    99.9% {
+      opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
