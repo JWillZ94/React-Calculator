@@ -2,22 +2,30 @@
     caret-color: auto;
     font-size: 12px;
     position: relative;
-    width: 200px;
-    height: 20px;
+    width: 90%;
+    height: 10%;
     background: #fff;
     border: 1px solid #333;
-    margin: 0 auto;
+    border-radius: 10px;
+    margin: 25% auto 0;
+
+    @media (max-width: 350px) {
+        margin: 25% auto 0;
+    }
 }
 
 #output-value-space {
     position: absolute;
     left: 4px;
-    font-size: 12px;
+    font-size: 42px;
     color: #333;
+    height: 50px;
 
     &::after {
         content: "|";
         color: #333;
+        position: absolute;
+        bottom: -1px;
         animation-name: blink;
         animation-duration: 0.9s;
         animation-iteration-count: infinite;

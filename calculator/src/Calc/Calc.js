@@ -22,7 +22,7 @@ class Calc extends React.Component {
                 }));
                 break;
 
-            case 'clear':
+            case 'Clear':
                 char = '';
                 this.setState(state => ({
                     screen: ''

@@ -1,0 +1,15 @@
+#numbers-container {
+    grid-row: 1/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0.5rem;
+
+    button {
+        font-size: 32px;
+
+        &:last-child {
+            grid-column: 2/3;
+        }
+
+    }
+}

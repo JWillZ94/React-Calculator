@@ -1,0 +1,23 @@
+#btns-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 2fr;
+    grid-gap: 1rem;
+    width: 90%;
+    margin: 15% auto;
+    height: 48%;
+
+    @media (max-width: 350px) {
+        height: 46%;
+    }
+
+    button {
+        background-color: #fff;
+        border-radius: 10px;
+        font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+          "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+          sans-serif;
+         font-weight: bold;
+    }
+
+}
