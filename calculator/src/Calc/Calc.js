@@ -7,7 +7,7 @@ class Calc extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {screen: ''};
+        this.state = {screen: '9(3000)'};
 
         this.handleScreenChange = this.handleScreenChange.bind(this);
     }
@@ -70,7 +70,6 @@ class Calc extends React.Component {
                     this.state.screen.slice(-1) === '/' ||
                     this.state.screen.slice(-1) === '('
                 ) {
-
                     char = '';
                 } else {
                     this.setState(state => ({
@@ -106,6 +105,8 @@ class Calc extends React.Component {
                 break;
         }
 
+
+
     }
 
     render() {
@@ -116,6 +117,12 @@ class Calc extends React.Component {
                 <Buttons handleScreenChange={this.handleScreenChange} />
             </div>
         );
+    }
+
+    componentDidUpdate() {
+        console.log(this.state.screen);
+
+        document.getElementById('output').scrollLeft = 300;
     }
 }
 
