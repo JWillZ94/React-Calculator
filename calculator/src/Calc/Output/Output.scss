@@ -23,13 +23,19 @@
     height: 50px;
 
     &::after {
-        content: "|";
+        content: '|';
         color: #333;
         position: absolute;
         bottom: -1px;
         animation-name: blink;
         animation-duration: 0.9s;
         animation-iteration-count: infinite;
+    }
+}
+
+.eval {
+    &::after {
+        content: '' !important;
     }
 }
 

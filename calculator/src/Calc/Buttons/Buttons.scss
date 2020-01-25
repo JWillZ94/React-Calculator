@@ -14,10 +14,16 @@
     button {
         background-color: #fff;
         border-radius: 10px;
-        font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-          "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-          sans-serif;
-         font-weight: bold;
+        font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        font-weight: bold;
+        &:focus {
+            outline: 0;
+        }
+
+        .keyDown {
+            background: green;
+        }
+        
     }
 
 }

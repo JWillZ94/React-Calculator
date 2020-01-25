@@ -7,12 +7,14 @@ class Calc extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {screen: '9(3000)'};
+        this.state = {screen: '6000+500'};
 
         this.handleScreenChange = this.handleScreenChange.bind(this);
     }
 
     handleScreenChange(char) {
+
+        document.getElementById('output-value-space').classList.remove('eval');
 
         switch(char) {
             case '<-':
@@ -96,12 +98,15 @@ class Calc extends React.Component {
                     screen: newEval(state.screen).toString()
                 }));
 
+                document.getElementById('output-value-space').classList.add('eval');
+
                 break;
 
             default:
                 this.setState(state => ({
                     screen: state.screen += char
                 }));
+
                 break;
         }
 
@@ -110,6 +115,20 @@ class Calc extends React.Component {
     }
 
     render() {
+
+        // console.log(document.querySelectorAll('#btns-container button'));
+        //
+        // document
+        //     .querySelectorAll('#btns-container button')
+        //     .addEventListener('onkeydown', function (e) {
+        //         e.target.classList.add('keyDown');
+        //     });
+        //
+        // document
+        //     .querySelectorAll('#btns-container button')
+        //     .addEventListener('onkeyup', function (e) {
+        //         e.target.classList.remove('keyDown');
+        //     });
 
         return (
             <div id="calc-container">
