@@ -20,10 +20,23 @@
             outline: 0;
         }
 
-        .keyDown {
-            background: green;
-        }
-        
     }
 
+}
+
+.pressed {
+    animation-name: btnPress;
+    animation-duration: 0.5s;
+}
+
+@keyframes btnPress {
+    0% {
+        background: #fff;
+    }
+    50% {
+        background: radial-gradient(circle, rgba(179,179,179,1) 0%, rgba(179,179,179,1) 8%, rgba(255,255,255,1) 100%);
+    }
+    100% {
+        background: #fff;
+    }
 }

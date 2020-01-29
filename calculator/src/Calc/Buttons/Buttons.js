@@ -9,9 +9,9 @@ class Buttons extends React.Component {
     render() {
         return (
             <div id="btns-container">
-                <Numbers handleNumberPress={this.props.handleScreenChange} />
-                <Operators handleOperatorPress={this.props.handleScreenChange} />
-                <Other handleOtherPress={this.props.handleScreenChange} />
+                <Numbers handleNumberPress={this.props.handleScreenChange} handleBtnPress={this.props.handleBtnPress} handleBtnRelease={this.props.handleBtnRelease} />
+                <Operators handleOperatorPress={this.props.handleScreenChange} handleBtnPress={this.props.handleBtnPress} handleBtnRelease={this.props.handleBtnRelease} />
+                <Other handleOtherPress={this.props.handleScreenChange} handleBtnPress={this.props.handleBtnPress} handleBtnRelease={this.props.handleBtnRelease} />
             </div>
         );
     }

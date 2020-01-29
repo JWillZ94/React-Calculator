@@ -10,6 +10,17 @@ class Calc extends React.Component {
         this.state = {screen: '6000+500'};
 
         this.handleScreenChange = this.handleScreenChange.bind(this);
+        this.handleBtnPress = this.handleBtnPress.bind(this);
+        this.handleBtnRelease = this.handleBtnRelease.bind(this);
+    }
+
+    handleBtnPress(char) {
+        document.getElementsByClassName(char)[0].classList.add('pressed');
+        console.log(char);
+    }
+
+    handleBtnRelease(char) {
+        document.getElementsByClassName(char)[0].classList.remove('pressed');
     }
 
     handleScreenChange(char) {
@@ -110,36 +121,20 @@ class Calc extends React.Component {
                 break;
         }
 
-
-
     }
 
     render() {
 
-        // console.log(document.querySelectorAll('#btns-container button'));
-        //
-        // document
-        //     .querySelectorAll('#btns-container button')
-        //     .addEventListener('onkeydown', function (e) {
-        //         e.target.classList.add('keyDown');
-        //     });
-        //
-        // document
-        //     .querySelectorAll('#btns-container button')
-        //     .addEventListener('onkeyup', function (e) {
-        //         e.target.classList.remove('keyDown');
-        //     });
-
         return (
             <div id="calc-container">
                 <Output screen={this.state.screen} />
-                <Buttons handleScreenChange={this.handleScreenChange} />
+                <Buttons handleScreenChange={this.handleScreenChange} handleBtnPress={this.handleBtnPress} handleBtnRelease={this.handleBtnRelease} />
             </div>
         );
     }
 
     componentDidUpdate() {
-        console.log(this.state.screen);
+        // console.log(this.state.screen);
 
         document.getElementById('output').scrollLeft = 300;
     }
