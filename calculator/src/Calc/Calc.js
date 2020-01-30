@@ -7,7 +7,7 @@ class Calc extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {screen: '6000+500'};
+        this.state = {screen: '600000-500'};
 
         this.handleScreenChange = this.handleScreenChange.bind(this);
         this.handleBtnPress = this.handleBtnPress.bind(this);
@@ -16,7 +16,6 @@ class Calc extends React.Component {
 
     handleBtnPress(char) {
         document.getElementsByClassName(char)[0].classList.add('pressed');
-        console.log(char);
     }
 
     handleBtnRelease(char) {
@@ -105,9 +104,13 @@ class Calc extends React.Component {
                     return new Function('return ' + fn)();
                 }
 
-                this.setState(state => ({
-                    screen: newEval(state.screen).toString()
-                }));
+                let ans = newEval(this.state.screen);
+
+                if (ans.toString().length >= 6) ans = ans.toExponential(2);
+
+                this.setState({
+                    screen: ans.toString()
+                });
 
                 document.getElementById('output-value-space').classList.add('eval');
 
@@ -134,8 +137,6 @@ class Calc extends React.Component {
     }
 
     componentDidUpdate() {
-        // console.log(this.state.screen);
-
         document.getElementById('output').scrollLeft = 300;
     }
 }

@@ -2,10 +2,6 @@
 
 Things left to do:
 
-- Output messing up for long subtraction expressions (solve later or never)
-- add better btn press animation
-- for big evals make it e^nth so it can fit screen
-- If the first number is more than one digit must be able to multiply with the 2nd number in parenthesis
 - write tests in Jest for everything
 - learn how to write efficient tests
 
