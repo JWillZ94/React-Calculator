@@ -19,6 +19,12 @@ afterEach(() => {
     container = null;
 });
 
+it('should add up to 16', () => {
+    let calcScreen = container.getElementById('calc-container').state.screen;
+    
+    expect(5 + 11).toBe(16);
+});
+
 it('shows correct answer in test case', () => {
     const onClick = jest.fn();
     act(() => {

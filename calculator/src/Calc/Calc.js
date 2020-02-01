@@ -1,13 +1,14 @@
 import React from 'react';
 import Output from './Output/Output';
 import Buttons from './Buttons/Buttons';
+import ReactTestRenderer from 'react-test-renderer';
 import './Calc.scss';
 
 class Calc extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {screen: '600000-500'};
+        this.state = {screen: ''};
 
         this.handleScreenChange = this.handleScreenChange.bind(this);
         this.handleBtnPress = this.handleBtnPress.bind(this);
@@ -127,6 +128,8 @@ class Calc extends React.Component {
     }
 
     render() {
+
+        console.log(ReactTestRenderer);
 
         return (
             <div id="calc-container">
