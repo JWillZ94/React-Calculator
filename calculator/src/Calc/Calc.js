@@ -1,7 +1,6 @@
 import React from 'react';
 import Output from './Output/Output';
 import Buttons from './Buttons/Buttons';
-import ReactTestRenderer from 'react-test-renderer';
 import './Calc.scss';
 
 class Calc extends React.Component {
@@ -128,8 +127,6 @@ class Calc extends React.Component {
     }
 
     render() {
-
-        console.log(ReactTestRenderer);
 
         return (
             <div id="calc-container">
